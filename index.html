@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مهدی تقی نسب - کارت ویزیت مجازی</title> {/* Title Updated */}
+    <title>مهدی تقی نسب - کارت ویزیت مجازی</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
     <style>
         :root {
-            --primary-color: #264b3b; /* Dark Green */
-            --accent-color: #e9a43c; /* Gold */
-            --background-color: #f4f4f4; /* Light Grey Background */
-            --card-bg-color: rgba(255, 255, 255, 0.85); /* Slightly more opaque white */
+            --primary-color: #264b3b;
+            --accent-color: #e9a43c;
+            --background-color: #f4f4f4;
+            --card-bg-color: rgba(255, 255, 255, 0.85);
             --text-color: #333;
             --subtle-text-color: #555;
             --persian-font: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,7 +30,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: var(--background-color); /* Changed background */
+            background-color: var(--background-color);
             position: relative;
             padding: 20px;
             overflow-y: auto;
@@ -42,7 +42,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            direction: ltr; /* Set container direction to LTR to keep overall layout consistent */
+            direction: ltr;
         }
 
         .profile-images {
@@ -58,19 +58,19 @@
             border-radius: 50%;
             overflow: hidden;
             position: relative;
-            border: 3px solid; /* Border color set below */
+            border: 3px solid;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff; /* Ensure background is white */
+            background-color: #fff;
         }
 
         .image-container.logo {
-            border-color: var(--primary-color); /* Changed border color */
-            margin-right: -30px; /* Adjusted overlap */
+            border-color: var(--primary-color);
+            margin-right: -30px;
             z-index: 1;
         }
 
         .image-container.profile {
-            border-color: var(--accent-color); /* Changed border color */
+            border-color: var(--accent-color);
             z-index: 2;
         }
 
@@ -83,12 +83,12 @@
         .glass-box {
             backdrop-filter: blur(10px) saturate(150%);
             -webkit-backdrop-filter: blur(10px) saturate(150%);
-            background-color: var(--card-bg-color); /* Updated background color */
+            background-color: var(--card-bg-color);
             border-radius: 16px;
-            border: 1px solid rgba(38, 75, 59, 0.15); /* Changed border to subtle green */
-            border-top: 3px solid var(--accent-color); /* Added accent border top */
+            border: 1px solid rgba(38, 75, 59, 0.15);
+            border-top: 3px solid var(--accent-color);
             padding: 30px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* Softened shadow */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
             transition: transform 0.3s ease;
         }
 
@@ -99,27 +99,27 @@
         .header-box {
             text-align: center;
             margin-top: -20px;
-            padding-top: 50px; /* Increased padding to account for taller image container */
-            padding-bottom: 20px; /* Added padding bottom for spacing */
-            direction: rtl; /* Ensure header text flows RTL */
+            padding-top: 50px;
+            padding-bottom: 20px;
+            direction: rtl;
         }
 
         .persian-text {
-             font-family: var(--persian-font); /* Apply Vazirmatn font */
-             font-weight: 500; /* Adjust weight if needed */
+             font-family: var(--persian-font);
+             font-weight: 500;
         }
 
         .name {
             font-size: 28px;
             font-weight: 600;
-            color: var(--text-color); /* Standard text color */
+            color: var(--text-color);
             margin-bottom: 5px;
         }
 
         .title {
             font-size: 18px;
             font-weight: 500;
-            color: var(--primary-color); /* Use primary color for title */
+            color: var(--primary-color);
             margin-bottom: 5px;
         }
 
@@ -137,17 +137,17 @@
         .info-box {
             display: flex;
             flex-direction: column;
-            gap: 18px; /* Increased gap slightly */
+            gap: 18px;
             height: 100%;
-            justify-content: flex-start; /* Align items to the top */
-            direction: ltr; /* Ensure content inside info-box is LTR */
+            justify-content: flex-start;
+            direction: ltr;
         }
 
         .info-item {
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            direction: ltr; /* Ensure icon and text are LTR */
+            direction: ltr;
         }
 
         .info-item i {
@@ -156,38 +156,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--primary-color); /* Use primary color for icons */
-            font-size: 20px; /* Adjust icon size */
+            color: var(--primary-color);
+            font-size: 20px;
             flex-shrink: 0;
             margin-top: 1px;
         }
 
         .info-text {
             font-size: 16px;
-            color: var(--subtle-text-color); /* Use subtle text color */
+            color: var(--subtle-text-color);
             word-break: break-word;
-            line-height: 1.5; /* Adjusted line height */
-            direction: ltr; /* Ensure text itself is LTR */
-            text-align: left; /* Align LTR text left */
+            line-height: 1.5;
+            direction: ltr;
+            text-align: left;
         }
 
         .info-text a {
-            color: var(--primary-color); /* Use primary color for links */
+            color: var(--primary-color);
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
         .info-text a:hover {
-            color: var(--accent-color); /* Use accent color for hover */
+            color: var(--accent-color);
         }
 
         .info-text a.address-link {
-             color: var(--subtle-text-color); /* Match surrounding text */
-             text-decoration: none; /* Remove underline */
+             color: var(--subtle-text-color);
+             text-decoration: none;
         }
         .info-text a.address-link:hover {
              color: var(--accent-color);
-             text-decoration: none; /* Keep underline off or add it if preferred */
+             text-decoration: none;
         }
 
         .qr-box {
@@ -195,12 +195,12 @@
             flex-direction: column;
             align-items: center;
             gap: 15px;
-            direction: rtl; /* Set QR box direction to RTL for title */
+            direction: rtl;
         }
 
         .qr-title {
             font-size: 16px;
-            color: var(--primary-color); /* Use primary color */
+            color: var(--primary-color);
             text-align: center;
             line-height: 1.4;
             font-family: var(--persian-font);
@@ -210,13 +210,13 @@
             background: white;
             padding: 10px;
             border-radius: 8px;
-            border: 1px solid var(--background-color); /* Light border */
-            direction: ltr; /* Ensure QR code itself is rendered LTR */
+            border: 1px solid var(--background-color);
+            direction: ltr;
         }
 
         .qr-box .info-text {
             text-align: center;
-            direction: rtl; /* Make download link text RTL */
+            direction: rtl;
         }
         .qr-box .info-text a {
              font-family: var(--persian-font);
@@ -230,7 +230,7 @@
                 padding: 25px 20px;
             }
             .header-box {
-                padding-top: 45px; /* Adjust for mobile */
+                padding-top: 45px;
             }
             .name { font-size: 24px; }
             .title { font-size: 16px; }
@@ -244,17 +244,17 @@
     <div class="card-container">
         <div class="profile-images">
             <div class="image-container logo">
-                <img src="logo.png" alt="Company Logo" class="profile-image"> {/* Logo remains the same */}
+                <img src="logo.png" alt="Company Logo" class="profile-image">
             </div>
             <div class="image-container profile">
-                 <img src="pic.jpg" alt="Profile Picture" class="profile-image"> {/* Profile picture - replace file if needed */}
+                 <img src="pic.jpg" alt="Profile Picture" class="profile-image">
             </div>
         </div>
 
         <div class="glass-box header-box">
-            <h1 class="name persian-text">مهدی تقی نسب</h1> {/* Name Updated */}
-            <h2 class="title persian-text">رئیس فروش</h2> {/* Title remains the same */}
-            <h2 class="field persian-text">چای، ادویه، قهوه</h2> {/* Field remains the same */}
+            <h1 class="name persian-text">مهدی تقی نسب</h1>
+            <h2 class="title persian-text">رئیس فروش</h2>
+            <h2 class="field persian-text">چای، ادویه، قهوه</h2>
         </div>
 
         <div class="info-boxes">
@@ -262,19 +262,19 @@
                 <div class="info-item">
                     <i><i class="fas fa-phone-alt"></i></i>
                     <span class="info-text">
-                        <a href="tel:02158179000">021-58179000 (EXT: 445)</a> {/* Phone & Ext Updated */}
+                        <a href="tel:02158179000">021-58179000 (EXT: 445)</a>
                     </span>
                 </div>
                  <div class="info-item">
                     <i><i class="fas fa-mobile-alt"></i></i>
                     <span class="info-text">
-                        <a href="tel:+989125986210">0912 598 6210</a> {/* Mobile Updated */}
+                        <a href="tel:+989125986210">0912 598 6210</a>
                     </span>
                 </div>
                 <div class="info-item">
                     <i><i class="fas fa-envelope"></i></i>
                     <span class="info-text">
-                        <a href="mailto:taghinasab.mehdi@hastitamin.com">taghinasab.mehdi@hastitamin.com</a> {/* Email Updated */}
+                        <a href="mailto:taghinasab.mehdi@hastitamin.com">taghinasab.mehdi@hastitamin.com</a>
                     </span>
                 </div>
             </div>
@@ -283,14 +283,14 @@
                  <div class="info-item">
                     <i><i class="fas fa-globe"></i></i>
                     <span class="info-text">
-                        <a href="http://www.hastitaamin.com" target="_blank">hastitaamin.com</a> {/* Website remains the same */}
+                        <a href="http://www.hastitaamin.com" target="_blank">hastitaamin.com</a>
                     </span>
                 </div>
                 <div class="info-item">
                     <i><i class="fas fa-map-marker-alt"></i></i>
                     <span class="info-text">
                         <a href="https://maps.app.goo.gl/sPTYcb9MDT5SevFj6" target="_blank" class="address-link">
-                            No. 8, Afarin Alley, Alvand St., Argentina Sq., Tehran, Iran {/* Address remains the same */}
+                            No. 8, Afarin Alley, Alvand St., Argentina Sq., Tehran, Iran
                         </a>
                     </span>
                 </div>
@@ -298,24 +298,24 @@
         </div>
 
         <div class="glass-box qr-box">
-            <div class="qr-title">برای مشاهده کاتالوگ محصولات اسکن کنید</div> {/* QR title remains the same */}
-            <div id="qrcode"></div> {/* QR Code container */}
+            <div class="qr-title">برای مشاهده کاتالوگ محصولات اسکن کنید</div>
+            <div id="qrcode"></div>
             <span class="info-text">
                 <a href="https://uploadkon.ir/uploads/e8b918_25CATALOG-RUSSIA-1403-11-28.pdf" target="_blank">
-                    دانلود کاتالوگ {/* Download link remains the same */}
+                    دانلود کاتالوگ
                 </a>
             </span>
         </div>
     </div>
 
     <script>
-        // Generate QR code for the catalogue PDF (Remains the same)
+        // Generate QR code for the catalogue PDF
         window.onload = function() {
             new QRCode(document.getElementById("qrcode"), {
-                text: "https://uploadkon.ir/uploads/e8b918_25CATALOG-RUSSIA-1403-11-28.pdf", // QR code data remains the same
+                text: "https://uploadkon.ir/uploads/e8b918_25CATALOG-RUSSIA-1403-11-28.pdf",
                 width: 120,
                 height: 120,
-                colorDark: "#264b3b", // var(--primary-color)
+                colorDark: "#264b3b",
                 colorLight: "#ffffff",
                 correctLevel: QRCode.CorrectLevel.H
             });
